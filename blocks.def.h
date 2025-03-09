@@ -3,7 +3,13 @@ static const Block blocks[] = {
 	/*Icon*/	/*Command*/		/*Update Interval*/	/*Update Signal*/
 //	{"Mem:", "free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g",	30,		0},
 
-	{"", "date '+%b %d (%a) %I:%M%p'",					5,		0},
+//	{"", "xkblayout | cut -c 1",           					1,		0},
+	{"", "xkblayout-state print %s",           					1,		0},
+	{"", "date '+ %a, %d %b %I:%M:%S%p'",					1,		0},
+
+//	NNN percentage
+//	{"", "declare -i a=(10#$(date +%d))&&((result=a*100/30))&&echo $result%",	5,		0},
+//
 };
 
 //sets delimeter between status commands. NULL character ('\0') means no delimeter.
